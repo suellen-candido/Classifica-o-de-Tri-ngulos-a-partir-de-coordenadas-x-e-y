@@ -1,0 +1,1 @@
+# Classifica-o-de-Tri-ngulos-a-partir-de-coordenadas-x-e-y
