@@ -64,32 +64,36 @@ elif escolha == 2:
 
     print('-=' * 15)
     print(f"Coordenadas A:{A}\nCoordenadas B:{B}\nCoordenadas C:{C}\nCoordenadas D:{D}")
-    print('-=' * 15)
 
     # Lados do quadrilátero
     l1 = ((B[0] - A[0]) ** 2 + (B[1] - A[1]) ** 2) ** 0.5 # AB
     l2 = ((C[0] - B[0]) ** 2 + (C[1] - B[1]) ** 2) ** 0.5 # BC
     l3 = ((D[0] - C[0]) ** 2 + (D[1] - C[1]) ** 2) ** 0.5 # CD
     l4 = ((A[0] - D[0]) ** 2 + (A[1] - D[1]) ** 2) ** 0.5 # DA
+    print('-=' * 15)
 
     print(f"Lado AB: {l1:.3f}\nLado BC: {l2:.3f}\nLado CD: {l3:.3f}\nLado DA: {l4:.3f}")
 
     # Diagonais
+    print('-=' * 15)
     AC = ((C[0] - A[0])**2 + (C[1] - A[1])**2) ** 0.5
     BD = ((D[0] - B[0])**2 + (D[1] - B[1])**2) ** 0.5
 
     print(f"Diagonal AC: {AC:.3f}\nDiagonal BD: {BD:.3f}")
 
     # Produtos escalares para ângulos
+
     angulo1 = (B[0]-A[0])*(C[0]-B[0]) + (B[1]-A[1])*(C[1]-B[1])  # Ângulo em B
     angulo2 = (C[0]-B[0])*(D[0]-C[0]) + (C[1]-B[1])*(D[1]-C[1])  # Ângulo em C
     angulo3 = (D[0]-C[0])*(A[0]-D[0]) + (D[1]-C[1])*(A[1]-D[1])  # Ângulo em D
     angulo4 = (A[0]-D[0])*(B[0]-A[0]) + (A[1]-D[1])*(B[1]-A[1])  # Ângulo em A
+    print('-=' * 15)
 
     print(f"Diagonal do Ângulo 1 (A): {angulo1}")
     print(f"Diagonal do Ângulo 2 (B): {angulo2}")
     print(f"Diagonal do Ângulo 3 (C): {angulo3}")
     print(f"Diagonal do Ângulo 4 (D): {angulo4}")
+    print('-=' * 15)
 
     if abs(angulo1) < 1e-6 and abs(angulo2) < 1e-6 and abs(angulo3) < 1e-6 and abs(angulo4) < 1e-6:
         if abs(l1 - l2) < 1e-6 and abs(l2 - l3) < 1e-6 and abs(l3 - l4) < 1e-6:
