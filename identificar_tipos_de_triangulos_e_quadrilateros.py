@@ -1,4 +1,4 @@
-# Coordenadas vão ser armazenadas nas listas A, B e C
+# Coordenadas vão ser armazenadas nas listas A, B, C, D
 A = []
 B = []
 C = []
@@ -12,11 +12,11 @@ if escolha == 1:
         x = float(input(f"Digite X{i+1}: "))
         y = float(input(f"Digite Y{i+1}: "))
 
-        if i == 0:  # Se o contador é igual a 0, os x1 e y1 vão para A
+        if i == 0:
             A = [x, y]
-        elif i == 1:  # Se o contador é igual a 1, os x2 e y2 vão para B
+        elif i == 1:
             B = [x, y]
-        else:  # Se o contador é igual a 2, os x3 e y3 vão para C
+        else:
             C = [x, y]
 
     print('-='*15)
@@ -31,8 +31,8 @@ if escolha == 1:
     print(f"Lado AB: {l1:.3}\nLado AC: {l2:.3}\nLado BC: {l3:.3}")
     print('-='*15)
 
-    # Tolerância para comparar floats
-    tol = 1e-6
+    # Tolerância para comparar floats (aumentada para lidar com aproximações tipo 1.732)
+    tol = 1e-2
 
     # Calculando área para descartar pontos colineares
     area = abs(A[0]*(B[1]-C[1]) + B[0]*(C[1]-A[1]) + C[0]*(A[1]-B[1])) / 2
@@ -82,7 +82,6 @@ elif escolha == 2:
     print(f"Diagonal AC: {AC:.3f}\nDiagonal BD: {BD:.3f}")
 
     # Produtos escalares para ângulos
-
     angulo1 = (B[0]-A[0])*(C[0]-B[0]) + (B[1]-A[1])*(C[1]-B[1])  # Ângulo em B
     angulo2 = (C[0]-B[0])*(D[0]-C[0]) + (C[1]-B[1])*(D[1]-C[1])  # Ângulo em C
     angulo3 = (D[0]-C[0])*(A[0]-D[0]) + (D[1]-C[1])*(A[1]-D[1])  # Ângulo em D
@@ -101,9 +100,7 @@ elif escolha == 2:
         else:
             print("Esse quadrilátero é um: Retângulo")
     else:
-        if abs(l1 - l2) < 1e-6 and abs(l2 - l3) < 1e-6 and abs(l3 - l4) < 1e-6:
-            print("Esse quadrilátero é um: Losango")
-        elif abs(l1 - l3) < 1e-6 and abs(l2 - l4) < 1e-6:
+        if abs(l1 - l3) < 1e-6 and abs(l2 - l4) < 1e-6:
             print("Esse quadrilátero é um: Paralelogramo")
         elif abs(l1 - l3) < 1e-6 or abs(l2 - l4) < 1e-6:
             print("Esse quadrilátero é um: Trapézio")
