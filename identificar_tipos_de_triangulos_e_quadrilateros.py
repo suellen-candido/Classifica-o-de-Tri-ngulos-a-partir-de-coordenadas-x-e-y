@@ -28,7 +28,6 @@ if escolha == 1:
     l2 = ((C[0]-A[0])**2 + (C[1]-A[1])**2)**0.5  # AC
     l3 = ((C[0]-B[0])**2 + (C[1]-B[1])**2)**0.5  # BC
 
-    print(f"Lado AB: {l1:.3}\nLado AC: {l2:.3}\nLado BC: {l3:.3}")
     print('-='*15)
 
     # Tolerância para comparar floats (aumentada para lidar com aproximações tipo 1.732)
